@@ -23,6 +23,12 @@ fn mdc_recursivo(a: u64, b: u64) -> u64 {
 }
 
 fn main() {
-
+    let a = 15;
+    let b = 10;
+    
+    println!("--- Teste de Equivalência MDC ---");
+    println!("Valores de entrada: A = {}, B = {}", a, b);
+    println!("Resultado Iterativo: {}", mdc_iterativo(a, b));
+    println!("Resultado Recursivo: {}", mdc_recursivo(a, b));
 }
 
