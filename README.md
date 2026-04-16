@@ -339,6 +339,7 @@ Neste caso específico o resultado final coincide, mas o **teste realizado no pa
 |------------|------------|----------------------|-------------------|
 | Google Gemini | Auxílio no desenvolvimento dos códigos-fonte | Geração inicial dos programas monolítico (Assembly x86-64), iterativo e recursivo (Rust) | Os códigos foram revisados, testados e validados pela equipe, que verificou a correção da lógica e a aderência aos conceitos da disciplina. |
 | Claude (Anthropic) | Auxílio na estruturação do README, formatação da Máquina de Traços e revisão da notação formal | Estrutura do documento, tabelas de traços, notação dos estados | Toda a análise formal foi verificada e validada pela equipe com base no conteúdo da disciplina. |
+| Gamma | Criação da apresentação | Estruturação visual e organização dos tópicos nos slides | Revisão estética, inserção de dados manuais e ajuste de fluxo. |
 
 ---
 
