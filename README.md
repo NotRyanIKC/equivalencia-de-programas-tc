@@ -1,7 +1,8 @@
 # Trabalho AV1 — Programas, Máquinas e Equivalência
+
 **Disciplina:** Teoria da Computabilidade  
 **Professor:** Daniel Leal Souza  
-**Semestre:** 01/2026 — CESUPA  
+**Semestre:** 01/2026 — CESUPA
 
 ---
 
@@ -12,6 +13,7 @@
 | Benjamin Yuji Suzuki |
 | Felipe de Freitas |
 | Ryan Iketani |
+| Lucas Coelho Mesquita |
 
 ---
 
@@ -39,12 +41,12 @@ mdc(a, b) = mdc(a, b − a),  se b > a
 
 ### Exemplos
 
-| a | b | MDC(a, b) |
-|---|---|-----------|
-| 15 | 10 | **5** |
-| 12 | 8 | **4** |
-| 7 | 13 | **1** |
-| 6 | 6 | **6** |
+| a  | b  | MDC(a, b) |
+|----|----|-----------|
+| 15 | 10 | **5**     |
+| 12 | 8  | **4**     |
+| 7  | 13 | **1**     |
+| 6  | 6  | **6**     |
 
 ---
 
@@ -53,8 +55,13 @@ mdc(a, b) = mdc(a, b − a),  se b > a
 ```
 .
 ├── README.md                  ← Este arquivo
+├── Cargo.toml                 ← Configuração do projeto Rust
+├── Cargo.lock
 ├── mdc_monolitico.asm         ← Programa monolítico (Assembly x86-64, Linux)
-└── main.rs                    ← Programas iterativo e recursivo (Rust)
+├── mdc_monolitico.o           ← Objeto gerado pelo NASM
+├── mdc_monolitico             ← Binário compilado
+└── src/
+    └── main.rs                ← Programas iterativo e recursivo (Rust)
 ```
 
 ---
@@ -119,7 +126,7 @@ rotulo_fim:                          ; [ESTADO FINAL]
 
 ### 2. Programa Iterativo — Rust
 
-**Arquivo:** `main.rs` — função `mdc_iterativo`
+**Arquivo:** `src/main.rs` — função `mdc_iterativo`
 
 O programa iterativo usa um **laço `while`** explícito que repete enquanto a condição de parada não é satisfeita.
 
@@ -140,7 +147,7 @@ fn mdc_iterativo(mut a: u64, mut b: u64) -> u64 {
 
 ### 3. Programa Recursivo — Rust
 
-**Arquivo:** `main.rs` — função `mdc_recursivo`
+**Arquivo:** `src/main.rs` — função `mdc_recursivo`
 
 O programa recursivo usa **chamadas recursivas** para cada caso e possui **condição-base** de parada explícita.
 
@@ -188,17 +195,12 @@ MDC calculado: 5
 > **Requisito:** [Rust](https://rustup.rs/) instalado (`rustc` ou `cargo`)
 
 ```bash
-# Compilar diretamente com rustc
-rustc main.rs -o mdc_rust
-
-# Executar
-./mdc_rust
-```
-
-**Ou com Cargo** (se estiver em um projeto):
-
-```bash
+# Com Cargo (recomendado)
 cargo run
+
+# Ou compilando diretamente com rustc
+rustc src/main.rs -o mdc_rust
+./mdc_rust
 ```
 
 **Saída esperada:**
@@ -336,7 +338,7 @@ Neste caso específico o resultado final coincide, mas o **teste realizado no pa
 ## 🤖 Uso de Inteligência Artificial
 
 | Ferramenta | Finalidade | O que foi aproveitado | Revisão da equipe |
-|------------|------------|----------------------|-------------------|
+|------------|-----------|----------------------|-------------------|
 | Google Gemini | Auxílio no desenvolvimento dos códigos-fonte | Geração inicial dos programas monolítico (Assembly x86-64), iterativo e recursivo (Rust) | Os códigos foram revisados, testados e validados pela equipe, que verificou a correção da lógica e a aderência aos conceitos da disciplina. |
 | Claude (Anthropic) | Auxílio na estruturação do README, formatação da Máquina de Traços e revisão da notação formal | Estrutura do documento, tabelas de traços, notação dos estados | Toda a análise formal foi verificada e validada pela equipe com base no conteúdo da disciplina. |
 | Gamma | Criação da apresentação | Estruturação visual e organização dos tópicos nos slides | Revisão estética, inserção de dados manuais e ajuste de fluxo. |
@@ -347,5 +349,5 @@ Neste caso específico o resultado final coincide, mas o **teste realizado no pa
 
 - DIVERIO, Tiaraju Asmuz; MENEZES, Paulo Fernando Blauth. **Teoria da Computação**. Sagra Luzzatto.
 - Material de aula — Prof. Daniel Leal Souza (slides sobre programas monolíticos, iterativos, recursivos e Máquina de Traços).
-- Documentação oficial Rust: https://www.rust-lang.org
-- Documentação NASM: https://www.nasm.us
+- Documentação oficial Rust: <https://www.rust-lang.org>
+- Documentação NASM: <https://www.nasm.us>
